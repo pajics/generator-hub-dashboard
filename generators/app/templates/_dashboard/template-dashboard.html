@@ -1,0 +1,28 @@
+<breadcrumb pageTitle="<%- componentNamePluralCamelCase %>.LANGUAGES"></breadcrumb>
+<div class="row btn-toolbar">
+  <div class="col-lg-6 col-md-8 col-sm-12">
+    <input type="text" class="form-control expandable-control filter-search" (keyup)="filterLanguages($event)"
+           [placeholder]="'<%- componentNamePluralCamelCase %>.FILTER_LANGUAGES' | translate" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-8 col-sm-12">
+    <div class="card">
+      <table class="table table-sm table-outer-bordered table-striped">
+        <thead>
+        <tr>
+          <th class="text-center">{{'<%- componentNamePluralCamelCase %>.GAMEBASE_ID' | translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let language of filteredLanguages">
+          <td class="text-center">{{<%- componentNamePluralCamelCase %>.gamebaseId}}</td>
+          <% for(var i=0; i<properties.length; i++) {%>
+          <td class="text-center">{{<%- componentNamePluralCamelCase %>.<%- properties[i] %>}}</td>
+          <% } %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

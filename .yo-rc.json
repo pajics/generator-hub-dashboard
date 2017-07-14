@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Srdjan Pajic",
+      "authorEmail": "spajic@greentube.com",
+      "authorUrl": ""
+    }
+  }
+}
