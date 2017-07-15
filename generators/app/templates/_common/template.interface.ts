@@ -1,6 +1,4 @@
-export interface ILanguage {
-  gamebaseId: number;
-  category: string;
-  code: string;
-  name: string;
+export interface I<%- componentNamePascalCase %> {
+<% for(var i=0; i<properties.length; i++) {%>
+  <%- properties[i] %>: string;<% } %>
 }

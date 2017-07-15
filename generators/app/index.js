@@ -42,6 +42,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    // dashboard
     this.fs.copyTpl(
       this.templatePath('_dashboard/template-dashboard.component.ts'),
       this.destinationPath(`dashboard/${this.props.componentNamePluralCamelCase}-dashboard.component.ts`),
@@ -55,6 +56,22 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('_dashboard/template-dashboard.component.spec.ts'),
       this.destinationPath(`dashboard/${this.props.componentNamePluralCamelCase}-dashboard.component.spec.ts`),
+      this.props
+    );
+    // common
+    this.fs.copyTpl(
+      this.templatePath('_common/template.service.ts'),
+      this.destinationPath(`common/${this.props.componentNameCamelCase}.service.ts`),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('_common/template.service.spec.ts'),
+      this.destinationPath(`common/${this.props.componentNameCamelCase}.service.spec.ts`),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('_common/template.interface.ts'),
+      this.destinationPath(`common/${this.props.componentNameCamelCase}.interface.ts`),
       this.props
     );
   }

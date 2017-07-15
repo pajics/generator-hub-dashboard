@@ -1,39 +1,39 @@
 import {TestBed, inject} from '@angular/core/testing';
-import {LanguageService} from './language.service';
+import {<%- componentNamePascalCase %>Service} from './<%- componentNameCamelCase %>.service';
 import {Api} from '../../_common/shared/api/api.service';
 import {Observable} from 'rxjs/Observable';
 import {MockedApi} from '../../_mocks/common.mock.spec';
 
-describe('Language.Service: ', () => {
+describe('<%- componentNamePascalCase %>.Service: ', () => {
   let service, api;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
         {provide: Api, useClass: MockedApi},
-        LanguageService
+        <%- componentNamePascalCase %>Service
       ]
     });
   });
 
   beforeEach(inject([Api], (_api: Api) => {
     api = _api;
-    service = new LanguageService(api);
+    service = new <%- componentNamePascalCase %>Service(api);
   }));
 
 
-  it('should create LanguageService and have methods', () => {
-    expect(service).toBeDefined('LanguageService instance to be defined');
-    expect(service instanceof LanguageService).toEqual(true, 'to be instance of LanguageService');
+  it('should create <%- componentNamePascalCase %>Service and have methods', () => {
+    expect(service).toBeDefined('<%- componentNamePascalCase %>Service instance to be defined');
+    expect(service instanceof <%- componentNamePascalCase %>Service).toEqual(true, 'to be instance of <%- componentNamePascalCase %>Service');
 
-    expect(service.getLanguages).toBeDefined('getLanguages to exist');
+    expect(service.get<%- componentNamePluralPascalCase %>).toBeDefined('get<%- componentNamePluralPascalCase %> to exist');
   });
 
-  it('should get languages', () => {
+  it('should get <%- componentNamePluralCamelCase %>', () => {
     spyOn(api, 'get').and.returnValue(Observable.of(null));
 
-    service.getLanguages();
+    service.get<%- componentNamePluralPascalCase %>();
 
-    expect(api.get).toHaveBeenCalledWith('/languages');
+    expect(api.get).toHaveBeenCalledWith('/<%- componentNamePluralCamelCase %>');
   });
 });
