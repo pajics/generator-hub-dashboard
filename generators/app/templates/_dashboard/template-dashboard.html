@@ -1,8 +1,8 @@
-<breadcrumb pageTitle="<%- componentNamePluralCamelCase %>.LANGUAGES"></breadcrumb>
+<breadcrumb pageTitle="<%- componentNamePluralCamelCase %>.<%- componentNamePluralUpperCase %>"></breadcrumb>
 <div class="row btn-toolbar">
   <div class="col-lg-6 col-md-8 col-sm-12">
-    <input type="text" class="form-control expandable-control filter-search" (keyup)="filterLanguages($event)"
-           [placeholder]="'<%- componentNamePluralCamelCase %>.FILTER_LANGUAGES' | translate" />
+    <input type="text" class="form-control expandable-control filter-search" (keyup)="filter<%- componentNamePluralPascalCase %>($event)"
+           [placeholder]="'<%- componentNamePluralCamelCase %>.FILTER_<%- componentNamePluralUpperCase %>' | translate" />
   </div>
 </div>
 <div class="row">
@@ -15,9 +15,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let language of filteredLanguages">
-          <% for(var i=0; i<properties.length; i++) {%>
-          <td class="text-center">{{<%- componentNamePluralCamelCase %>.<%- properties[i] %>}}</td><% } %>
+        <tr *ngFor="let <%- componentNameCamelCase %> of filtered<%- componentNamePluralPascalCase %>">
+          <% for(var i=0; i<properties.length; i++) {-%>
+          <td class="text-center">{{<%- componentNameCamelCase %>.<%- properties[i] %>}}</td>
+          <% } %>
         </tr>
         </tbody>
       </table>

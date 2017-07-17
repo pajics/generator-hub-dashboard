@@ -36,6 +36,7 @@ module.exports = class extends Generator {
         componentNamePascalCase: _.capitalize(props.component_name),
         componentNamePluralCamelCase: _.camelCase(props.component_name_plural),
         componentNamePluralPascalCase: _.capitalize(props.component_name_plural),
+        componentNamePluralUpperCase: _.toUpper(props.component_name_plural),
         properties: props.properties.split(',')
       };
     });

@@ -26,9 +26,9 @@ export class <%- componentNamePluralPascalCase %>DashboardComponent implements O
       return;
     }
     this.filtered<%- componentNamePluralPascalCase %> = this.<%- componentNamePluralCamelCase %>.filter(l =>
-      l.name.toUpperCase().indexOf(filter) !== -1
-      || l.gamebaseId.toString().indexOf(filter) !== -1
-      || l.code.toUpperCase().indexOf(filter) !== -1
+      <% for(var i=0; i<properties.length; i++) {-%>
+        <% if (i !== 0) {%>||<% } %> l.<%- properties[i] %>.indexOf(filter) !== -1
+      <% } -%>
     );
   }
 }
