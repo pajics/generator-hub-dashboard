@@ -46,33 +46,33 @@ module.exports = class extends Generator {
     // dashboard
     this.fs.copyTpl(
       this.templatePath('_dashboard/template-dashboard.component.ts'),
-      this.destinationPath(`dashboard/${this.props.componentNamePluralCamelCase}-dashboard.component.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralCamelCase}/dashboard/${this.props.componentNamePluralCamelCase}-dashboard.component.ts`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('_dashboard/template-dashboard.html'),
-      this.destinationPath(`dashboard/${this.props.componentNamePluralCamelCase}-dashboard.html`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralCamelCase}/dashboard/${this.props.componentNamePluralCamelCase}-dashboard.html`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('_dashboard/template-dashboard.component.spec.ts'),
-      this.destinationPath(`dashboard/${this.props.componentNamePluralCamelCase}-dashboard.component.spec.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralCamelCase}/dashboard/${this.props.componentNamePluralCamelCase}-dashboard.component.spec.ts`),
       this.props
     );
     // common
     this.fs.copyTpl(
       this.templatePath('_common/template.service.ts'),
-      this.destinationPath(`common/${this.props.componentNameCamelCase}.service.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralCamelCase}/common/${this.props.componentNameCamelCase}.service.ts`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('_common/template.service.spec.ts'),
-      this.destinationPath(`common/${this.props.componentNameCamelCase}.service.spec.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralCamelCase}/common/${this.props.componentNameCamelCase}.service.spec.ts`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('_common/template.interface.ts'),
-      this.destinationPath(`common/${this.props.componentNameCamelCase}.interface.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralCamelCase}/common/${this.props.componentNameCamelCase}.interface.ts`),
       this.props
     );
   }

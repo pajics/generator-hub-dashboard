@@ -11,14 +11,18 @@
       <table class="table table-sm table-outer-bordered table-striped">
         <thead>
         <tr>
-          <th class="text-center">{{'<%- componentNamePluralCamelCase %>.GAMEBASE_ID' | translate}}</th>
+          <% for(var i=0; i<properties.length; i++) {-%>
+
+          <th>{{<%- componentNameCamelCase %>.<%- properties[i] -%>}}</th><% } -%>
+
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let <%- componentNameCamelCase %> of filtered<%- componentNamePluralPascalCase %>">
           <% for(var i=0; i<properties.length; i++) {-%>
-          <td class="text-center">{{<%- componentNameCamelCase %>.<%- properties[i] %>}}</td>
-          <% } %>
+
+          <td>{{<%- componentNameCamelCase %>.<%- properties[i] -%>}}</td><% } -%>
+
         </tr>
         </tbody>
       </table>

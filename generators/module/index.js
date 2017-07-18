@@ -38,12 +38,12 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copyTpl(
       this.templatePath('template.module.ts'),
-      this.destinationPath(`${this.props.componentNamePluralCamelCase}/${this.props.componentNameCamelCase}.module.ts`),
+      this.destinationPath(src/app/`${this.props.componentNamePluralCamelCase}/${this.props.componentNamePluralCamelCase}.module.ts`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('template.routing.ts'),
-      this.destinationPath(`${this.props.componentNamePluralCamelCase}/${this.props.componentNameCamelCase}.routing.ts`),
+      this.destinationPath(src/app/`${this.props.componentNamePluralCamelCase}/${this.props.componentNamePluralCamelCase}.routing.ts`),
       this.props
     );
   }
