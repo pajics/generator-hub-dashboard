@@ -10,17 +10,29 @@ npm install -g yo
 npm install -g generator-hub-dashboard
 ```
 
-Then generate your new project:
 
+##Usage
+
+To create a Dashboard for Currencies with columns:
+
+```Gamebase Id | Key | Name | Code | Symbol```
+
+Start Yeoman Generator:
 ```bash
 yo hub-dashboard
 ```
 
+Input following:
+
+```
+Name for this Component in singular currency
+Name for this Component in plural currencies
+Properties CSV format gamebaseId,key,name,code,symbol
+```
+
+
 ## Getting To Know Yeoman
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
  * Feel free to [learn more about Yeoman](http://yeoman.io/).
 
 ## License
