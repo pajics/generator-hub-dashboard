@@ -2,7 +2,6 @@
   "name": "generator-hub-dashboard",
   "version": "0.1.0",
   "description": "Hub Dashboard Generator",
-  "homepage": "hub.gtoffice.lan",
   "author": {
     "name": "Srdjan Pajic",
     "email": "spajic@greentube.com",
@@ -46,6 +45,5 @@
       "node": true
     }
   },
-  "repository": "pajics/generator-hub-dashboard",
-  "private": true
+  "repository": "pajics/generator-hub-dashboard"
 }
