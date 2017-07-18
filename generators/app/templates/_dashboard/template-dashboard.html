@@ -13,7 +13,7 @@
         <tr>
           <% for(var i=0; i<properties.length; i++) {-%>
 
-          <th>{{<%- componentNameCamelCase %>.<%- properties[i] -%>}}</th><% } -%>
+          <th>{{'<%- componentNameCamelCase %>.<%- _.snakeCase(properties[i]).toUpperCase() -%>' | translate}}</th><% } -%>
 
         </tr>
         </thead>
