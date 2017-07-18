@@ -1,8 +1,8 @@
-import {TestBed, inject} from '@angular/core/testing';
-import {<%- componentNamePascalCase %>Service} from './<%- componentNameCamelCase %>.service';
-import {Api} from '../../_common/shared/api/api.service';
-import {Observable} from 'rxjs/Observable';
-import {MockedApi} from '../../_mocks/common.mock.spec';
+import { TestBed, inject } from '@angular/core/testing';
+import { <%- componentNamePascalCase %>Service } from './<%- componentNameCamelCase %>.service';
+import { Api } from '../../_common/shared/api/api.service';
+import { Observable } from 'rxjs/Observable';
+import { MockedApi } from '../../_mocks/common.mock.spec';
 
 describe('<%- componentNamePascalCase %>.Service: ', () => {
   let service, api;
