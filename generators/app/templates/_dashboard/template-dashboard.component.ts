@@ -1,21 +1,27 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {I<%- componentNamePascalCase %>} from '../common/<%- componentNameCamelCase %>.interface';
 import {<%- componentNamePascalCase %>Service} from '../common/<%- componentNameCamelCase %>.service';
+import {PageService} from '../../_common/page/page.service';
 @Component({
   selector: '<%- componentNamePluralCamelCase %>-dashboard',
-  templateUrl: './<%- componentNamePluralCamelCase %>-dashboard.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './<%- componentNamePluralCamelCase %>-dashboard.html'
 })
 export class <%- componentNamePluralPascalCase %>DashboardComponent implements OnInit {
   <%- componentNamePluralCamelCase %>: I<%- componentNamePascalCase %>[];
   filtered<%- componentNamePluralPascalCase %>: I<%- componentNamePascalCase %>[];
 
-  constructor(private <%- componentNameCamelCase %>Service: <%- componentNamePascalCase %>Service) {}
+  constructor(private pageService: PageService,
+              private <%- componentNameCamelCase %>Service: <%- componentNamePascalCase %>Service) {}
 
   ngOnInit(): void {
+    this.pageService.startLoading();
     this.<%- componentNameCamelCase %>Service.get<%- componentNamePluralPascalCase %>().subscribe((<%- componentNamePluralCamelCase %>) => {
       this.<%- componentNamePluralCamelCase %> = <%- componentNamePluralCamelCase %>;
       this.filtered<%- componentNamePluralPascalCase %> = this.<%- componentNamePluralCamelCase %>;
+      this.pageService.doneLoading();
+    }, () => {
+      this.pageService.notify({ heading: 'ERROR.HEADING', body: 'ERROR.GENERAL_FAIL', type: 'danger' });
+      this.pageService.doneLoading();
     });
   }
 

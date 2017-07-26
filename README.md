@@ -15,7 +15,9 @@ npm install -g generator-hub-dashboard
 
 To create a Dashboard for Currencies with columns:
 
-```Gamebase Id | Key | Name | Code | Symbol```
+```bash
+Gamebase Id | Key | Name | Code | Symbol
+```
 
 Start Yeoman Generator:
 ```bash
@@ -24,7 +26,7 @@ yo hub-dashboard
 
 Input following:
 
-```
+```bash
 Name for this Component in singular currency
 Name for this Component in plural currencies
 Properties CSV format gamebaseId,key,name,code,symbol
