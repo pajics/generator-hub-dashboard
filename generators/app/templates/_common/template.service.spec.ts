@@ -21,7 +21,6 @@ describe('<%- componentNamePascalCase %>.Service: ', () => {
     service = new <%- componentNamePascalCase %>Service(api);
   }));
 
-
   it('should create <%- componentNamePascalCase %>Service and have methods', () => {
     expect(service).toBeDefined('<%- componentNamePascalCase %>Service instance to be defined');
     expect(service instanceof <%- componentNamePascalCase %>Service).toEqual(true, 'to be instance of <%- componentNamePascalCase %>Service');
