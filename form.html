@@ -1,0 +1,117 @@
+﻿<form [formGroup]="testForm" novalidate>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <h6>{{'tests.TITLE_INFO1'|translate}}</h6>
+              
+        
+        
+        <!--DROPDOWN-->
+        <select [title]="'tests.OPERATOR' | translate"
+                [infield-label]="'tests.OPERATOR' | translate"
+                formControlName="operatorId" class="custom-select form-control"
+                placement="bottom"
+                [tooltip]="testForm.controls.operatorId".errors && operatorIdTT">
+          <option *ngFor="let key of operators" [value]="key">{{key}}</option>
+        </select>
+        
+        
+        
+        <!--VALIDATION-->
+        <template #operatorIdTT>
+          {{'tests.OPERATOR_REQUIRED' | translate}}
+        </template>
+        
+              
+        <!--INPUT-->
+        <input type="text" maxlength="100" formControlName="siteId"
+               class="form-control" [infield-label]="'tests.SITE NAME' | translate" placement="bottom"
+               [tooltip]="testForm.controls.siteId.errors && siteIdTT" />
+        
+        
+        
+        
+        
+        <!--VALIDATION-->
+        <template #siteIdTT>
+          {{'tests.SITE NAME_REQUIRED' | translate}}
+        </template>
+        
+              
+        <!--INPUT-->
+        <input type="text" maxlength="100" formControlName="siteUrl"
+               class="form-control" [infield-label]="'tests.SITE URL' | translate" placement="bottom"
+               [tooltip]="testForm.controls.siteUrl.errors && siteUrlTT" />
+        
+        
+        
+        
+        
+        <!--VALIDATION-->
+        <template #siteUrlTT>
+          {{'tests.SITE URL_REQUIRED' | translate}}
+        </template>
+        
+              
+        <!--INPUT-->
+        <input type="text" maxlength="100" formControlName="licenseId"
+               class="form-control" [infield-label]="'tests.LICENSE' | translate" placement="bottom"
+               [tooltip]="testForm.controls.licenseId.errors && licenseIdTT" />
+        
+        
+        
+        
+        
+              
+        
+        <!--AUTOCOMPLETE-->
+        <typeahead class="form-control" formControlName="" (valueChange)="getThemeSuggestions($event)"
+                   multiValue="true" [suggestions]=""
+                   [infield-label]="'tests.MULTI' | translate" placement="bottom"
+                   [tooltip]="testForm.controls..errors && TT">
+        </typeahead>
+        
+        
+        
+        
+        <!--VALIDATION-->
+        <template #TT>
+          {{'tests.MULTI_REQUIRED' | translate}}
+        </template>
+        
+          </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+      <h6>{{'tests.TITLE_INFO1'|translate}}</h6>
+              
+        
+        
+        
+        <!--CHECKBOX-->
+        
+        
+              
+        
+        
+        <!--DROPDOWN-->
+        <select [title]="'tests.JURISDICTION' | translate"
+                [infield-label]="'tests.JURISDICTION' | translate"
+                formControlName="jurisdictionId" class="custom-select form-control"
+                placement="bottom"
+                [tooltip]="testForm.controls.jurisdictionId".errors && jurisdictionIdTT">
+          <option *ngFor="let key of " [value]="key">{{key}}</option>
+        </select>
+        
+        
+        
+        <!--VALIDATION-->
+        <template #jurisdictionIdTT>
+          {{'tests.JURISDICTION_REQUIRED' | translate}}
+        </template>
+        
+          </div>
+      </div>
+
+  <button click)="save()" type="button" [disabled]="!testForm.valid"
+          class="btn btn-primary">{{'tests.SAVE' | translate}}
+  </button>
+  <button (click)="close()" type="button" class="btn btn-secondary">{{'CLOSE' | translate}}</button>
+</form>

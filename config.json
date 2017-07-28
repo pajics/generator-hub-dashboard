@@ -1,0 +1,57 @@
+{
+  "name": "Add a new B2B Site",
+  "type": "Split",
+  "forms" : [{
+    "title": "Site Left",
+    "properties": [
+      {
+        "name": "Operator",
+        "id": "operatorId",
+        "type": "dropdown",
+        "valuesProperty": "operators",
+        "required": true
+      },
+      {
+        "name": "Site Name",
+        "id": "siteId",
+        "type": "input",
+        "required": true
+      },
+      {
+        "name": "Site URL",
+        "id": "siteUrl",
+        "type": "input",
+        "required": true
+      },
+      {
+        "name": "License",
+        "id": "licenseId",
+        "type": "input",
+        "required": false
+      },
+      {
+        "name": "multi",
+        "type": "autocomplete",
+        "multi": true,
+        "required": true
+      }
+    ]
+  },
+  {
+    "title": "Site Right",
+    "properties": [
+      {
+        "name": "Cash",
+        "id": "isCash",
+        "type": "checkbox",
+        "required": false
+      },
+      {
+        "name": "Jurisdiction",
+        "id": "jurisdictionId",
+        "type": "dropdown",
+        "required": true
+      }
+    ]
+  }]
+}

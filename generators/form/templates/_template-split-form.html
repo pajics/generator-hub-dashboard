@@ -1,0 +1,51 @@
+﻿﻿<form [formGroup]="<%- componentNameCamelCase %>Form" novalidate>
+  <div class="row">
+  <% for(var j=0; j<forms.length; j++) { -%>
+  <div class="col-lg-4 col-md-6 col-sm-12">
+      <h6>{{'<%- componentNamePluralCamelCase %>.TITLE_INFO1'|translate}}</h6>
+      <% for(var i=0; i<forms[j].properties.length; i++) {
+        var property = forms[j].properties[i];
+      -%>
+        <% if (property.type === 'input') { %>
+        <!--INPUT-->
+        <input type="text" maxlength="100" formControlName="<%- property.id %>"
+               class="form-control" [infield-label]="'<%- componentNamePluralCamelCase %>.<%- _.toUpper(property.name) %>' | translate" placement="bottom"
+               [tooltip]="<%- componentNameCamelCase %>Form.controls.<%- property.id %>.errors && <%- property.id %>TT" />
+        <% } %>
+        <% if (property.type === 'autocomplete') { %>
+        <!--AUTOCOMPLETE-->
+        <typeahead class="form-control" formControlName="<%- property.id %>" (valueChange)="getThemeSuggestions($event)"
+                   multiValue="<%- !!property.multi %>" [suggestions]="<%- property.id %>"
+                   [infield-label]="'<%- componentNamePluralCamelCase %>.<%- _.toUpper(property.name) %>' | translate" placement="bottom"
+                   [tooltip]="<%- componentNameCamelCase %>Form.controls.<%- property.id %>.errors && <%- property.id %>TT">
+        </typeahead>
+        <% } %>
+        <% if (property.type === 'dropdown') { %>
+        <!--DROPDOWN-->
+        <select [title]="'<%- componentNamePluralCamelCase %>.<%- _.toUpper(property.name) %>' | translate"
+                [infield-label]="'<%- componentNamePluralCamelCase %>.<%- _.toUpper(property.name) %>' | translate"
+                formControlName="<%- property.id %>" class="custom-select form-control"
+                placement="bottom"
+                [tooltip]="<%- componentNameCamelCase %>Form.controls.<%- property.id %>".errors && <%- property.id %>TT">
+          <option *ngFor="let key of <%- property.valuesProperty %>" [value]="key">{{key}}</option>
+        </select>
+        <% } %>
+        <% if (property.type === 'checkbox') { %>
+        <!--CHECKBOX-->
+        <% } %>
+        <% if (property.required) { %>
+        <!--VALIDATION-->
+        <template #<%- property.id %>TT>
+          {{'<%- componentNamePluralCamelCase %>.<%- _.toUpper(property.name) %>_REQUIRED' | translate}}
+        </template>
+        <% } %>
+      <% } -%>
+    </div>
+    <% } -%>
+  </div>
+
+  <button click)="save()" type="button" [disabled]="!<%- componentNameCamelCase %>Form.valid"
+          class="btn btn-primary">{{'<%- componentNamePluralCamelCase %>.SAVE' | translate}}
+  </button>
+  <button (click)="close()" type="button" class="btn btn-secondary">{{'CLOSE' | translate}}</button>
+</form>
