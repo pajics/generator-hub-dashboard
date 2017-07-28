@@ -11,7 +11,9 @@ export class <%- componentNamePluralPascalCase %>DashboardComponent implements O
   filtered<%- componentNamePluralPascalCase %>: I<%- componentNamePascalCase %>[];
 
   constructor(private pageService: PageService,
-              private <%- componentNameCamelCase %>Service: <%- componentNamePascalCase %>Service) {}
+              private <%- componentNameCamelCase %>Service: <%- componentNamePascalCase %>Service) {
+    this.pageService.setBreadcrumbs([{text: '<%- componentNameCamelCase %>.DASHBOARD', icon: 'app-icon-<%- componentNameCamelCase %>'}]);
+  }
 
   ngOnInit(): void {
     this.pageService.startLoading();
@@ -34,7 +36,7 @@ export class <%- componentNamePluralPascalCase %>DashboardComponent implements O
     this.filtered<%- componentNamePluralPascalCase %> = this.<%- componentNamePluralCamelCase %>.filter(l =>
       <% for(var i=0; i<properties.length; i++) {-%>
         <% if (i !== 0) {%>||<% } -%>
-      l.<%- properties[i] %>.toUpperCase().indexOf(filter) !== -1
+      l.<%- properties[i] %> && l.<%- properties[i] %>.toUpperCase().indexOf(filter) !== -1
       <% } -%>
     );
   }

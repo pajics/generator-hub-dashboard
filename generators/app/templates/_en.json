@@ -1,5 +1,6 @@
 {
   "FILTER_<%- componentNamePluralUpperCase %>": "Filter <%- componentNamePluralPascalCase %>",
+  "DASHBOARD": "Dashboard",
 <% for(var i=0; i<properties.length; i++) {-%>
   "<%- _.snakeCase(properties[i]).toUpperCase() %>": "<%- _.startCase(properties[i]) %>"<% if (i !== properties.length - 1) {%>,<% } %>
 <% } %>}
