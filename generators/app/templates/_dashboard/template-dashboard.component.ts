@@ -13,7 +13,7 @@ export class <%- componentNamePluralPascalCase %>DashboardComponent implements O
 
   constructor(private pageService: PageService,
               private <%- componentNameCamelCase %>Service: <%- componentNamePascalCase %>Service) {
-    this.pageService.setBreadcrumbs([{text: '<%- componentNameCamelCase %>.DASHBOARD', icon: 'app-icon-<%- componentNameCamelCase %>'}]);
+    this.pageService.setBreadcrumbs([{text: '<%- localizationNamespace %>.DASHBOARD', icon: 'app-icon-<%- componentNameKebabCase %>'}]);
   }
 
   ngOnInit(): void {
