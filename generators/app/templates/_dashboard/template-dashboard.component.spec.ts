@@ -22,7 +22,7 @@ class Mocked<%- componentNamePascalCase %>Service {
   }
 }
 
-fdescribe('<%- componentNamePluralPascalCase %>Dashboard.Component', () => {
+describe('<%- componentNamePluralPascalCase %>Dashboard.Component', () => {
   let fixture, component, service, pageService;
 
   beforeEach((done) => {
