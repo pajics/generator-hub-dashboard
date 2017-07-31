@@ -42,7 +42,9 @@ module.exports = class extends Generator {
         componentNamePluralCamelCase: _.camelCase(props.component_name_plural),
         componentNamePluralPascalCase: _.capitalize(props.component_name_plural),
         componentNamePluralUpperCase: _.toUpper(props.component_name_plural),
-        componentNameKebabCase: _.kebabCase(props.component_name_plural),
+        componentNameKebabCase: _.kebabCase(props.component_name),
+        componentNamePluralKebabCase: _.kebabCase(props.component_name_plural),
+        localizationNamespace: _.snakeCase(props.component_name_plural),
         properties: props.properties.split(','),
         _: _
       };
@@ -53,53 +55,53 @@ module.exports = class extends Generator {
     // Module Setup
     this.fs.copyTpl(
       this.templatePath('template.module.ts'),
-      this.destinationPath(`src/app/${this.props.componentNameKebabCase}/${this.props.componentNameKebabCase}.module.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralKebabCase}/${this.props.componentNamePluralKebabCase}.module.ts`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('template.routing.ts'),
-      this.destinationPath(`src/app/${this.props.componentNameKebabCase}/${this.props.componentNameKebabCase}.routing.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralKebabCase}/${this.props.componentNamePluralKebabCase}.routing.ts`),
       this.props
     );
 
     // Dashboard
     this.fs.copyTpl(
       this.templatePath('_dashboard/template-dashboard.component.ts'),
-      this.destinationPath(`src/app/${this.props.componentNameKebabCase}/dashboard/${this.props.componentNameKebabCase}-dashboard.component.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralKebabCase}/dashboard/${this.props.componentNamePluralKebabCase}-dashboard.component.ts`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('_dashboard/template-dashboard.html'),
-      this.destinationPath(`src/app/${this.props.componentNameKebabCase}/dashboard/${this.props.componentNameKebabCase}-dashboard.html`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralKebabCase}/dashboard/${this.props.componentNamePluralKebabCase}-dashboard.html`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('_dashboard/template-dashboard.component.spec.ts'),
-      this.destinationPath(`src/app/${this.props.componentNameKebabCase}/dashboard/${this.props.componentNameKebabCase}-dashboard.component.spec.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralKebabCase}/dashboard/${this.props.componentNamePluralKebabCase}-dashboard.component.spec.ts`),
       this.props
     );
 
     // Common
     this.fs.copyTpl(
       this.templatePath('_common/template.service.ts'),
-      this.destinationPath(`src/app/${this.props.componentNamePluralCamelCase}/common/${this.props.componentNameCamelCase}.service.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralKebabCase}/common/${this.props.componentNameKebabCase}.service.ts`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('_common/template.service.spec.ts'),
-      this.destinationPath(`src/app/${this.props.componentNamePluralCamelCase}/common/${this.props.componentNameCamelCase}.service.spec.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralKebabCase}/common/${this.props.componentNameKebabCase}.service.spec.ts`),
       this.props
     );
     this.fs.copyTpl(
       this.templatePath('_common/template.interface.ts'),
-      this.destinationPath(`src/app/${this.props.componentNamePluralCamelCase}/common/${this.props.componentNameCamelCase}.interface.ts`),
+      this.destinationPath(`src/app/${this.props.componentNamePluralKebabCase}/common/${this.props.componentNameKebabCase}.interface.ts`),
       this.props
     );
 
     // Translation
     this.fs.copyTpl(
       this.templatePath('_en.json'),
-      this.destinationPath(`src/assets/locales/${this.props.componentNamePluralCamelCase}/en.json`),
+      this.destinationPath(`src/assets/locales/${this.props.localizationNamespace}/en.json`),
       this.props
     );
   }

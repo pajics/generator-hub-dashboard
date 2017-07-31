@@ -3,8 +3,8 @@ import {I<%- componentNamePascalCase %>} from '../common/<%- componentNameKebabC
 import {<%- componentNamePascalCase %>Service} from '../common/<%- componentNameKebabCase %>.service';
 import {PageService} from '../../_common/page/page.service';
 @Component({
-  selector: '<%- componentNameKebabCase %>-dashboard',
-  templateUrl: './<%- componentNameKebabCase %>-dashboard.html'
+  selector: '<%- componentNamePluralKebabCase %>-dashboard',
+  templateUrl: './<%- componentNamePluralKebabCase %>-dashboard.html'
 })
 export class <%- componentNamePluralPascalCase %>DashboardComponent implements OnInit {
   <%- componentNamePluralCamelCase %>: I<%- componentNamePascalCase %>[];

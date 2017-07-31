@@ -13,7 +13,16 @@ describe('generator-hub-dashboard:app', () => {
 
     it('creates files', () => {
       assert.file([
-        'src/app/as/as.module.ts'
+        'src/app/as/as.module.ts',
+        'src/app/as/as.routing.ts',
+        'src/app/as/dashboard/as-dashboard.component.ts',
+        'src/app/as/dashboard/as-dashboard.component.spec.ts',
+        'src/app/as/dashboard/as-dashboard.html',
+        'src/app/as/common/a.service.ts',
+        'src/app/as/common/a.service.spec.ts',
+        'src/app/as/common/a.interface.ts',
+        'src/assets/locales/as/en.json'
+
       ]);
     });
   });
@@ -26,7 +35,15 @@ describe('generator-hub-dashboard:app', () => {
 
     it('creates files', () => {
       assert.file([
-        'src/app/first-seconds/first-seconds.module.ts'
+        'src/app/first-seconds/first-seconds.module.ts',
+        'src/app/first-seconds/first-seconds.routing.ts',
+        'src/app/first-seconds/dashboard/first-seconds-dashboard.component.ts',
+        'src/app/first-seconds/dashboard/first-seconds-dashboard.component.spec.ts',
+        'src/app/first-seconds/dashboard/first-seconds-dashboard.html',
+        'src/app/first-seconds/common/first-second.service.ts',
+        'src/app/first-seconds/common/first-second.service.spec.ts',
+        'src/app/first-seconds/common/first-second.interface.ts',
+        'src/assets/locales/first_seconds/en.json'
       ]);
     });
   });

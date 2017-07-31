@@ -1,14 +1,14 @@
-import {TestBed, inject} from '@angular/core/testing';
-import {ReactiveFormsModule, FormsModule} from '@angular/forms';
-import {Observable} from 'rxjs/Observable';
-import {MockedPageService, MockedBreadcrumb} from '../../_mocks/common.mock.spec';
-import {MockedTranslatePipe} from '../../_mocks/translate.mock.spec';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
-import {PageService} from '../../_common/page/page.service';
-import {Countable} from '../../_common/shared/api/api.service';
-import {<%- componentNamePascalCase %>Service} from '../common/<%- componentNameKebabCase %>.service';
-import {<%- componentNamePluralPascalCase %>DashboardComponent} from './<%- componentNameKebabCase %>s-dashboard.component';
-import {<%- componentNamePascalCase %>Category} from '../common/<%- componentNameKebabCase %>.interface';
+import { TestBed, inject } from '@angular/core/testing';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import { MockedPageService, MockedBreadcrumb } from '../../_mocks/common.mock.spec';
+import { MockedTranslatePipe } from '../../_mocks/translate.mock.spec';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { PageService } from '../../_common/page/page.service';
+import { Countable } from '../../_common/shared/api/api.service';
+import { <%- componentNamePascalCase %>Service } from '../common/<%- componentNameKebabCase %>.service';
+import { <%- componentNamePluralPascalCase %>DashboardComponent } from './<%- componentNamePluralKebabCase %>s-dashboard.component';
+import { <%- componentNamePascalCase %>Category } from '../common/<%- componentNameKebabCase %>.interface';
 
 class Mocked<%- componentNamePascalCase %>Service {
   result<%- componentNamePluralPascalCase %>: Observable<ICountable<I<%- componentNamePascalCase %>>>;
@@ -44,6 +44,7 @@ fdescribe('<%- componentNamePluralPascalCase %>Dashboard.Component', () => {
       done();
     });
   });
+
   beforeEach(inject([ <%- componentNamePascalCase %>Service, PageService ],
     (_service: <%- componentNamePascalCase %>Service, _ps: PageService) => {
       service = _service;
