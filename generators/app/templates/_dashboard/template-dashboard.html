@@ -1,8 +1,8 @@
-<breadcrumb pageTitle="<%- componentNamePluralKebabCase %>.<%- componentNamePluralUpperCase %>"></breadcrumb>
+<breadcrumb pageTitle="<%- localizationNamespace %>.<%- componentNamePluralUpperCase %>"></breadcrumb>
 <div class="row btn-toolbar">
   <div class="col-lg-6 col-md-8 col-sm-12">
     <input type="text" class="form-control expandable-control filter-search" (keyup)="filter<%- componentNamePluralPascalCase %>($event)"
-           [placeholder]="'<%- componentNamePluralKebabCase %>.FILTER_<%- componentNamePluralUpperCase %>' | translate" />
+           [placeholder]="'<%- localizationNamespace %>.FILTER_<%- componentNamePluralUpperCase %>' | translate" />
   </div>
 </div>
 <div class="row">
@@ -13,7 +13,7 @@
         <tr>
           <% for(var i=0; i<properties.length; i++) {-%>
 
-          <th>{{'<%- componentNameKebabCase %>.<%- _.snakeCase(properties[i]).toUpperCase() -%>' | translate}}</th><% } -%>
+          <th>{{'<%- localizationNamespace %>.<%- _.snakeCase(properties[i].name).toUpperCase() -%>' | translate}}</th><% } -%>
 
         </tr>
         </thead>
@@ -21,7 +21,7 @@
         <tr *ngFor="let <%- componentNameCamelCase %> of filtered<%- componentNamePluralPascalCase %>">
           <% for(var i=0; i<properties.length; i++) {-%>
 
-          <td>{{<%- componentNameCamelCase %>.<%- properties[i] -%>}}</td><% } -%>
+          <td>{{<%- componentNameCamelCase %>.<%- properties[i].name -%>}}</td><% } -%>
 
         </tr>
         </tbody>

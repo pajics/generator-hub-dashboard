@@ -8,6 +8,6 @@ export class <%- componentNamePascalCase %>Service {
   constructor(private api: Api) {}
 
   get<%- componentNamePluralPascalCase %>(): Observable<I<%- componentNamePascalCase %>[]> {
-    return this.api.get('/<%- componentNamePluralCamelCase %>');
+    return this.api.get('/<%- componentNamePluralKebabCase %>');
   }
 }

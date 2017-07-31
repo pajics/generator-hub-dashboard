@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {I<%- componentNamePascalCase %>} from '../common/<%- componentNameKebabCase %>.interface';
-import {<%- componentNamePascalCase %>Service} from '../common/<%- componentNameKebabCase %>.service';
-import {PageService} from '../../_common/page/page.service';
+import { Component, OnInit } from '@angular/core';
+import { I<%- componentNamePascalCase %> } from '../common/<%- componentNameKebabCase %>.interface';
+import { <%- componentNamePascalCase %>Service } from '../common/<%- componentNameKebabCase %>.service';
+import { PageService } from '../../_common/page/page.service';
+
 @Component({
   selector: '<%- componentNamePluralKebabCase %>-dashboard',
   templateUrl: './<%- componentNamePluralKebabCase %>-dashboard.html'
@@ -36,7 +37,7 @@ export class <%- componentNamePluralPascalCase %>DashboardComponent implements O
     this.filtered<%- componentNamePluralPascalCase %> = this.<%- componentNamePluralCamelCase %>.filter(l =>
       <% for(var i=0; i<properties.length; i++) {-%>
         <% if (i !== 0) {%>||<% } -%>
-      l.<%- properties[i] %> && l.<%- properties[i] %>.toUpperCase().indexOf(filter) !== -1
+      l.<%- properties[i].name %> && l.<%- properties[i].name %>.toUpperCase().indexOf(filter) !== -1
       <% } -%>
     );
   }

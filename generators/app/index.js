@@ -20,32 +20,41 @@ module.exports = class extends Generator {
       {
         type    : 'input',
         name    : 'component_name',
-        message : 'Name for this Component in singular'
+        message : 'Name for this Component in singular ("user", "employee profile")'
       },
       {
         type    : 'input',
         name    : 'component_name_plural',
-        message : 'Name for this Component in plural'
+        message : 'Name for this Component in plural ("users", "employee profiles")'
       },
       {
         type    : 'input',
         name    : 'properties',
-        message : 'Properties CSV format'
+        message : 'Properties CSV format ("id,name", "id:number,name")'
       }
     ];
 
     return this.prompt(prompts).then(props => {
+
       // To access props later use this.props.someAnswer;
       this.props = {
         componentNameCamelCase: _.camelCase(props.component_name),
-        componentNamePascalCase: _.capitalize(props.component_name),
+        componentNamePascalCase: _.upperFirst(_.camelCase(props.component_name)),
         componentNamePluralCamelCase: _.camelCase(props.component_name_plural),
-        componentNamePluralPascalCase: _.capitalize(props.component_name_plural),
-        componentNamePluralUpperCase: _.toUpper(props.component_name_plural),
+        componentNamePluralPascalCase: _.upperFirst(_.camelCase(props.component_name_plural)),
+        componentNamePluralUpperCase: _.toUpper(_.snakeCase(props.component_name_plural)),
         componentNameKebabCase: _.kebabCase(props.component_name),
         componentNamePluralKebabCase: _.kebabCase(props.component_name_plural),
         localizationNamespace: _.snakeCase(props.component_name_plural),
-        properties: props.properties.split(','),
+        properties: props.properties.split(',').map((prop) => {
+          let parts = prop.split(':');
+          let name = parts[0];
+          let type = parts.length > 1 ? parts[1] : 'string';
+          return {
+            name: name,
+            type: type
+          };
+        }),
         _: _
       };
     });

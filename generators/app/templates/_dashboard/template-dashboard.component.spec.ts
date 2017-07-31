@@ -5,10 +5,10 @@ import { MockedPageService, MockedBreadcrumb } from '../../_mocks/common.mock.sp
 import { MockedTranslatePipe } from '../../_mocks/translate.mock.spec';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { PageService } from '../../_common/page/page.service';
-import { Countable } from '../../_common/shared/api/api.service';
+import { ICountable } from '../../_common/shared/api/api.service';
 import { <%- componentNamePascalCase %>Service } from '../common/<%- componentNameKebabCase %>.service';
-import { <%- componentNamePluralPascalCase %>DashboardComponent } from './<%- componentNamePluralKebabCase %>s-dashboard.component';
-import { <%- componentNamePascalCase %>Category } from '../common/<%- componentNameKebabCase %>.interface';
+import { <%- componentNamePluralPascalCase %>DashboardComponent } from './<%- componentNamePluralKebabCase %>-dashboard.component';
+import { I<%- componentNamePascalCase %> } from '../common/<%- componentNameKebabCase %>.interface';
 
 class Mocked<%- componentNamePascalCase %>Service {
   result<%- componentNamePluralPascalCase %>: Observable<ICountable<I<%- componentNamePascalCase %>>>;
