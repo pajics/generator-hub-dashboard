@@ -39,10 +39,14 @@ module.exports = class extends Generator {
   }
 
   writing() {
-
     this.fs.copyTpl(
       this.templatePath('_template-split-form.html'),
-      this.destinationPath(`form.html`),
+      this.destinationPath(`src/form.html`),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('_template.form.ts'),
+      this.destinationPath(`src/form.ts`),
       this.props
     );
   }

@@ -30,7 +30,36 @@
         "required": false
       },
       {
-        "name": "multi",
+        "name": "Default Country",
+        "id": "countryId",
+        "type": "autocomplete",
+        "multi": false,
+        "required": true
+      },
+      {
+        "name": "Default Language",
+        "id": "languageId",
+        "type": "autocomplete",
+        "multi": false,
+        "required": true
+      },
+      {
+        "name": "Other Languages",
+        "id": "languages",
+        "type": "autocomplete",
+        "multi": true,
+        "required": true
+      },
+      {
+        "name": "Base Currency",
+        "id": "currencyId",
+        "type": "autocomplete",
+        "multi": false,
+        "required": true
+      },
+      {
+        "name": "Other Currencies",
+        "id": "currencies",
         "type": "autocomplete",
         "multi": true,
         "required": true
@@ -51,6 +80,38 @@
         "id": "jurisdictionId",
         "type": "dropdown",
         "required": true
+      },
+      {
+        "name": "Market",
+        "id": "markets",
+        "type": "autocomplete",
+        "multi": true,
+        "required": true
+      },
+      {
+        "name": "Production Data Center",
+        "id": "dataCenterId",
+        "type": "autocomplete",
+        "multi": false,
+        "required": true
+      },
+      {
+        "name": "Game Server Location",
+        "id": "serverId",
+        "type": "autocomplete",
+        "multi": false,
+        "required": true
+      },
+      {
+        "name": "Expected Concurrent Users",
+        "id": "concurrentUsersId",
+        "type": "dropdown",
+        "required": false
+      },
+      {
+        "name": "Notes",
+        "id": "note",
+        "type": "textarea"
       }
     ]
   }]

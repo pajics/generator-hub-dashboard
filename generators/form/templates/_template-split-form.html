@@ -30,6 +30,11 @@
           <option *ngFor="let key of <%- property.valuesProperty %>" [value]="key">{{key}}</option>
         </select>
         <% } %>
+        <% if (property.type === 'textarea') {%>
+        <textarea type="text" formControlName="<%- property.id %>" maxlength="1000" class="form-control"
+              [infield-label]="'<%- componentNamePluralCamelCase %>.<%- _.toUpper(property.name) %>' | translate">
+        </textarea>
+        <% } %>
         <% if (property.type === 'checkbox') { %>
         <!--CHECKBOX-->
         <% } %>
