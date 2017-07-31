@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {I<%- componentNamePascalCase %>} from '../common/<%- componentNameCamelCase %>.interface';
-import {<%- componentNamePascalCase %>Service} from '../common/<%- componentNameCamelCase %>.service';
+import {I<%- componentNamePascalCase %>} from '../common/<%- componentNameKebabCase %>.interface';
+import {<%- componentNamePascalCase %>Service} from '../common/<%- componentNameKebabCase %>.service';
 import {PageService} from '../../_common/page/page.service';
 @Component({
-  selector: '<%- componentNamePluralCamelCase %>-dashboard',
-  templateUrl: './<%- componentNamePluralCamelCase %>-dashboard.html'
+  selector: '<%- componentNameKebabCase %>-dashboard',
+  templateUrl: './<%- componentNameKebabCase %>-dashboard.html'
 })
 export class <%- componentNamePluralPascalCase %>DashboardComponent implements OnInit {
   <%- componentNamePluralCamelCase %>: I<%- componentNamePascalCase %>[];

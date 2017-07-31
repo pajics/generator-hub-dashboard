@@ -1,4 +1,4 @@
-import { <%- componentNamePluralPascalCase %>DashboardComponent } from './dashboard/<%- componentNamePluralCamelCase %>-dashboard.component';
+import { <%- componentNamePluralPascalCase %>DashboardComponent } from './dashboard/<%- componentNameKebabCase %>-dashboard.component';
 import { Error404Component } from '../_common/shared/error/404.component';
 
 import { ModuleWithProviders } from '@angular/core';

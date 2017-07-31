@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { I<%- componentNamePascalCase %> } from './<%- componentNameCamelCase %>.interface';
+import { I<%- componentNamePascalCase %> } from './<%- componentNameKebabCase %>.interface';
 import { Api } from '../../_common/shared/api/api.service';
 
 @Injectable()

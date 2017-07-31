@@ -6,9 +6,9 @@ import {MockedTranslatePipe} from '../../_mocks/translate.mock.spec';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {PageService} from '../../_common/page/page.service';
 import {Countable} from '../../_common/shared/api/api.service';
-import {<%- componentNamePascalCase %>Service} from '../common/<%- componentNameCamelCase %>.service';
-import {<%- componentNamePluralPascalCase %>DashboardComponent} from './<%- componentNameCamelCase %>s-dashboard.component';
-import {<%- componentNamePascalCase %>Category} from '../common/<%- componentNameCamelCase %>.interface';
+import {<%- componentNamePascalCase %>Service} from '../common/<%- componentNameKebabCase %>.service';
+import {<%- componentNamePluralPascalCase %>DashboardComponent} from './<%- componentNameKebabCase %>s-dashboard.component';
+import {<%- componentNamePascalCase %>Category} from '../common/<%- componentNameKebabCase %>.interface';
 
 class Mocked<%- componentNamePascalCase %>Service {
   result<%- componentNamePluralPascalCase %>: Observable<ICountable<I<%- componentNamePascalCase %>>>;

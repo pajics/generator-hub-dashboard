@@ -1,8 +1,8 @@
-<breadcrumb pageTitle="<%- componentNamePluralCamelCase %>.<%- componentNamePluralUpperCase %>"></breadcrumb>
+<breadcrumb pageTitle="<%- componentNameKebabCase %>.<%- componentNamePluralUpperCase %>"></breadcrumb>
 <div class="row btn-toolbar">
   <div class="col-lg-6 col-md-8 col-sm-12">
     <input type="text" class="form-control expandable-control filter-search" (keyup)="filter<%- componentNamePluralPascalCase %>($event)"
-           [placeholder]="'<%- componentNamePluralCamelCase %>.FILTER_<%- componentNamePluralUpperCase %>' | translate" />
+           [placeholder]="'<%- componentNameKebabCase %>.FILTER_<%- componentNamePluralUpperCase %>' | translate" />
   </div>
 </div>
 <div class="row">
@@ -13,7 +13,7 @@
         <tr>
           <% for(var i=0; i<properties.length; i++) {-%>
 
-          <th>{{'<%- componentNameCamelCase %>.<%- _.snakeCase(properties[i]).toUpperCase() -%>' | translate}}</th><% } -%>
+          <th>{{'<%- componentNameKebabCase %>.<%- _.snakeCase(properties[i]).toUpperCase() -%>' | translate}}</th><% } -%>
 
         </tr>
         </thead>
