@@ -1,0 +1,7 @@
+{
+  <% for(var i=0; i<properties.length; i++) {-%>
+"<%- _.snakeCase(properties[i].name).toUpperCase() %>": "<%- _.startCase(properties[i].name) %>"<% if (i !== properties.length - 1 || properties[i].required) {%>,<% } -%>
+  <% if (properties[i].required) {%>
+  "<%- _.snakeCase(properties[i].name).toUpperCase() %>_REQUIRED": "<%- _.startCase(properties[i].name) %> is required.",
+  <% } -%>
+<% } %>}

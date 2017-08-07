@@ -1,14 +1,18 @@
 {
   "name": "Add a new B2B Site",
   "type": "Split",
+  "formName": "siteForm",
+  "componentName": "SiteDetails",
+  "moduleName": "sites",
   "forms" : [{
     "title": "Site Left",
     "properties": [
       {
         "name": "Operator",
         "id": "operatorId",
-        "type": "dropdown",
-        "valuesProperty": "operators",
+        "type": "autocomplete",
+        "collectionName": "operators",
+        "collectionType": "IOperator",
         "required": true
       },
       {
@@ -31,7 +35,9 @@
       },
       {
         "name": "Default Country",
-        "id": "countryId",
+        "id": "defaultCountry",
+        "collectionName": "countries",
+        "collectionType": "ICountry",
         "type": "autocomplete",
         "multi": false,
         "required": true
@@ -39,6 +45,8 @@
       {
         "name": "Default Language",
         "id": "languageId",
+        "collectionName": "languages",
+        "collectionType": "ILanguage",
         "type": "autocomplete",
         "multi": false,
         "required": true
@@ -46,6 +54,8 @@
       {
         "name": "Other Languages",
         "id": "languages",
+        "collectionName": "languages",
+        "collectionType": "ILanguage",
         "type": "autocomplete",
         "multi": true,
         "required": true
@@ -53,6 +63,8 @@
       {
         "name": "Base Currency",
         "id": "currencyId",
+        "collectionName": "currencies",
+        "collectionType": "ICurrency",
         "type": "autocomplete",
         "multi": false,
         "required": true
@@ -60,6 +72,8 @@
       {
         "name": "Other Currencies",
         "id": "currencies",
+        "collectionName": "currencies",
+        "collectionType": "ICurrency",
         "type": "autocomplete",
         "multi": true,
         "required": true
@@ -78,19 +92,25 @@
       {
         "name": "Jurisdiction",
         "id": "jurisdictionId",
-        "type": "dropdown",
+        "type": "autocomplete",
+        "collectionName": "jurisdictions",
+        "collectionType": "IJurisdiction",
         "required": true
       },
       {
         "name": "Market",
         "id": "markets",
         "type": "autocomplete",
+        "collectionName": "countries",
+        "collectionType": "ICountry",
         "multi": true,
         "required": true
       },
       {
         "name": "Production Data Center",
         "id": "dataCenterId",
+        "collectionName": "countries",
+        "collectionType": "ICountry",
         "type": "autocomplete",
         "multi": false,
         "required": true
@@ -98,6 +118,8 @@
       {
         "name": "Game Server Location",
         "id": "serverId",
+        "collectionName": "countries",
+        "collectionType": "ICountry",
         "type": "autocomplete",
         "multi": false,
         "required": true
@@ -106,6 +128,7 @@
         "name": "Expected Concurrent Users",
         "id": "concurrentUsersId",
         "type": "dropdown",
+        "options": "up to 5000|5000 until 10000|10000 until 50000|more than 50000",
         "required": false
       },
       {
